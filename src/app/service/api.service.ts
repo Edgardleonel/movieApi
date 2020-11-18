@@ -8,9 +8,11 @@ import { Observable } from 'rxjs';
 })
 export class ApiService {
 
+  public searchInput: string;
   constructor(private http: HttpClient) { }
 
   readonly url = environment.baseUrl;
+  readonly urlSearch = environment.baseUrlSearch;
   private key = environment.key;
   public language = environment.language;
 
@@ -26,4 +28,7 @@ export class ApiService {
     return this.http.get<any[]>(`${this.url}/${movieId}/videos?api_key=${this.key}&language=${this.language}`);
   }
 
+  getSearch(valueSearch, page): Observable<any[]> {
+    return this.http.get<any[]>(`${this.urlSearch}?api_key=${this.key}&language=${this.language}&query=${valueSearch}&page=${page}`);
+  }
 }

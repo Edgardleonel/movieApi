@@ -6,6 +6,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { MovieComponent } from './movie/movie.component';
+import { SearchComponent } from './search/search.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -13,7 +14,8 @@ const routes: Routes = [
   {path: 'popular', component: PopularComponent},
   {path: 'now_playing', component: NowPlayingComponent},
   {path: 'upcoming', component: UpcomingComponent},
-  {path: 'top_rated', component: TopRatedComponent}
+  {path: 'top_rated', component: TopRatedComponent},
+  {path: 'search', component: SearchComponent},
 ];
 
 @NgModule({

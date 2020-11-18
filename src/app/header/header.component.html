@@ -3,17 +3,17 @@
     <a class="closebtn" (click)="closeNav()">&times;</a>
     <ul>
       <li *ngFor="let category of categories">
-        <a class="nav-link"  routerLink="../{{category.slug}}" routerLinkActive="active"
+        <a class="nav-link"  routerLink="{{category.slug}}" routerLinkActive="active"
         [routerLinkActiveOptions]="{ exact: true }" (click)="closeNav()" >{{category.name}}</a></li>
     </ul>
   </div>
   <div id="search-model" class="search-model-box">
     <div class="h-100 d-flex align-items-center justify-content-center">
     <a class="search-close-btn" (click)="closeSearch()">&times;</a>
-    <form class="search-model-form">
-      <input type="text" id="search-input" placeholder="Digite o nome do filme...">
-      <button class="btn" type="button"><i class="fas fa-search"></i></button>
-    </form>
+    <div class="search-model-form">
+      <input [(ngModel)]="searchText" type="text" id="search-input" placeholder="Digite o nome do filme..." >
+      <button class="btn" type="button" (click)="search()" ><i class="fas fa-search"></i></button>
+    </div>
     </div>
   </div>
   <div class="container">

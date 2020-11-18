@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import {NgxPaginationModule} from 'ngx-pagination';
@@ -18,6 +19,7 @@ import { UpcomingComponent } from './upcoming/upcoming.component';
 import { TopRatedComponent } from './top-rated/top-rated.component';
 
 import { ApiService } from './service/api.service';
+import { SearchComponent } from './search/search.component';
 
 @NgModule({
   declarations: [
@@ -31,13 +33,16 @@ import { ApiService } from './service/api.service';
     CategoriesComponent,
     NowPlayingComponent,
     UpcomingComponent,
-    TopRatedComponent
+    TopRatedComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    ReactiveFormsModule, 
+    FormsModule
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
   providers: [ApiService],

@@ -1,4 +1,7 @@
+import { ApiService } from './../service/api.service';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-header',
@@ -12,9 +15,18 @@ export class HeaderComponent implements OnInit {
     {name: 'Próximas Estreias', slug: 'upcoming'},
     {name: 'Mais Bem Avaliados', slug: 'top_rated'}
   ];
-  constructor() { }
+  public searchText;
+
+  constructor(private api: ApiService, private router: Router) { }
 
   ngOnInit(): void {
+  }
+
+  search() {
+    console.log('search', this.searchText);
+    this.api.searchInput = this.searchText;
+    this.router.navigateByUrl('/search');
+    this.closeSearch();
   }
 
   openNav() {
