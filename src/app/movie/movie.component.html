@@ -1,0 +1,45 @@
+<div class="bg" *ngIf="movie" [style.background-image]="'url(https://image.tmdb.org/t/p/w500' + movie.backdrop_path + ')'">
+  <div class="custom-bg">
+    <div class="container">
+      <div class="card">
+        <div class="row no-gutters">
+          <div class="col-md-4">
+            <img src='{{ "https://image.tmdb.org/t/p/w500" + movie.poster_path }}' class="card-img" alt="">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h2 class="card-title">{{movie.title}}</h2>
+              <p class="card-text">
+                <span class="badge badge-secondary p-1 mr-2" *ngIf="movie.video">+18</span>
+                <span class="badge badge-secondary p-1 mr-2" *ngIf="!movie.video">L</span>
+              </p>
+              <span class="card-text" *ngFor="let genre of movie.genres">
+                <span>{{genre.name}}  </span>
+              </span>
+              <h3 class="card-title">
+                <span>
+                  <div class="badge badge-success" *ngIf="movie.vote_average >= 7">{{movie.vote_average}}</div>
+                  <div class="badge badge-warning" *ngIf="movie.vote_average < 7">{{movie.vote_average}}</div>
+                </span>
+                    <button type="button" class="btn" (click)="openModal()"><i class="fa fa-play"></i>Trailer</button>
+                </h3>
+              <h4>Sinopse</h4>
+              <p class="card-text">
+                {{movie.overview}}
+              </p>
+              <p class="card-text"><small class="text-muted">Duração {{movie.runtime}} minutos</small></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="staticBackdrop"  (click)="closeModal()" *ngIf="video">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+        <iframe width="853" height="480" [src]="video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </div>
+</div>

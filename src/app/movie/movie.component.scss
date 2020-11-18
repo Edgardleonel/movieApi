@@ -1,0 +1,52 @@
+.bg {
+  border-bottom: 1px solid rgba(15.29%, 21.96%, 27.06%, 1.00);
+    background-position: right -200px top;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.custom-bg {
+  background-image: linear-gradient(to right, rgba(18.04%, 9.41%, 23.14%, 1.00) 150px, rgba(25.10%, 15.69%, 30.59%, 0.84) 100%);
+}
+
+.card {
+  background: transparent;
+  border: none;
+}
+
+.card-img {
+  padding: 4rem 2rem 4rem 0;
+}
+
+.card-body {
+  margin-top: 4rem;
+  color: #FFF;
+}
+
+.card-title {
+  font-weight: 900;
+  .btn {
+    &:hover {
+      color: var(--theme-primary);
+    }
+  }
+}
+
+.btn {
+  color: #FFF;
+}
+
+.modal {
+  top: 10%;
+}
+
+.modal-content {
+  padding: 1rem;
+  border-radius: 0;
+  border: none;
+  background-color: transparent;
+}
+.close {
+  text-shadow: none;
+  color: #FFF;
+}

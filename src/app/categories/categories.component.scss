@@ -1,0 +1,16 @@
+.section {
+  padding: 2rem 0;
+}
+
+.my-pagination ::ng-deep .ngx-pagination {
+  padding: 0;
+}
+
+.my-pagination ::ng-deep .ngx-pagination .current {
+  background: var(--theme-primary);
+}
+
+.my-pagination {
+  padding: 1rem 0;
+  text-align: center;
+}
